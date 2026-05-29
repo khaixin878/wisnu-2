@@ -133,8 +133,9 @@
     #partners { padding: 64px 0; background: var(--lg); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
     .pt-label { text-align: center; font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gr); margin-bottom: 32px; }
     .pt-row   { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
-    .pt-logo  { width: 148px; height: 62px; background: #fff; border: 1px solid var(--bd); border-radius: var(--rs); display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 600; color: var(--gr); text-align: center; padding: 8px; transition: var(--ease); }
-    .pt-logo:hover { border-color: var(--gp); box-shadow: 0 2px 12px rgba(45,138,78,.12); color: var(--gd); }
+    .pt-logo  { width: 148px; height: 72px; background: #fff; border: 1px solid var(--bd); border-radius: var(--rs); display: flex; align-items: center; justify-content: center; padding: 10px; transition: var(--ease); }
+    .pt-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .pt-logo:hover { border-color: var(--gp); box-shadow: 0 2px 12px rgba(45,138,78,.12); }
 
     /* ── Programme & Projects ── */
     #projects { padding: 100px 0; background: var(--wh); }
@@ -303,7 +304,7 @@
         </div>
         <div class="hero-stats">
           <div><div class="hs-num">11+</div><div class="hs-label" data-i18n="hs1">Tahun Pengalaman</div></div>
-          <div><div class="hs-num">USD 1,1 jt</div><div class="hs-label" data-i18n="hs2">Dana Green Economy</div></div>
+          <div><div class="hs-num" data-i18n="sn_usd">USD 1,1 jt</div><div class="hs-label" data-i18n="hs2">Dana Green Economy</div></div>
           <div><div class="hs-num">21.500</div><div class="hs-label" data-i18n="hs3">Petani Dijangkau</div></div>
           <div><div class="hs-num">UK-PACT</div><div class="hs-label" data-i18n="hs4">Program Nasional Dipimpin</div></div>
         </div>
@@ -378,48 +379,13 @@
         <p class="sdesc" data-i18n="imp_desc">Pengalaman lintas pemerintah, donor internasional, dan program akar rumput — dengan hasil yang dapat diukur dan diverifikasi.</p>
         <div class="imp-stats">
           <div class="stat-c rv"><div class="sn">11+</div><div class="sl" data-i18n="st1">Tahun Pengalaman</div></div>
-          <div class="stat-c rv"><div class="sn">USD 1,1 jt</div><div class="sl" data-i18n="st2">Dana Green Economy Diamankan</div></div>
+          <div class="stat-c rv"><div class="sn" data-i18n="sn_usd">USD 1,1 jt</div><div class="sl" data-i18n="st2">Dana Green Economy Diamankan</div></div>
           <div class="stat-c rv"><div class="sn">21.500</div><div class="sl" data-i18n="st3">Petani Kecil Dijangkau</div></div>
           <div class="stat-c rv"><div class="sn">UK-PACT</div><div class="sl" data-i18n="st4">Program Nasional Dipimpin</div></div>
         </div>
       </div>
       <div class="map-wrap">
-        <svg viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="dg" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="rgba(255,255,255,.06)"/></pattern>
-            <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#4caf70" stop-opacity=".35"/><stop offset="100%" stop-color="#4caf70" stop-opacity="0"/></radialGradient>
-          </defs>
-          <rect width="560" height="350" fill="url(#dg)" rx="14"/>
-          <ellipse cx="108" cy="150" rx="68" ry="95" fill="rgba(255,255,255,.055)"/>
-          <ellipse cx="262" cy="98"  rx="62" ry="52" fill="rgba(255,255,255,.055)"/>
-          <ellipse cx="268" cy="202" rx="56" ry="78" fill="rgba(255,255,255,.055)"/>
-          <ellipse cx="388" cy="118" rx="115" ry="72" fill="rgba(255,255,255,.055)"/>
-          <ellipse cx="451" cy="234" rx="52"  ry="36" fill="rgba(255,255,255,.055)"/>
-          <circle cx="399" cy="205" r="48" fill="url(#glow)"/>
-          <circle cx="352" cy="196" r="5.5" fill="#4caf70" opacity=".9"/>
-          <circle cx="368" cy="200" r="4.5" fill="#4caf70" opacity=".85"/>
-          <circle cx="392" cy="207" r="7"   fill="#a8d5b5" opacity=".95"/>
-          <circle cx="410" cy="208" r="5"   fill="#a8d5b5" opacity=".8"/>
-          <circle cx="423" cy="207" r="4"   fill="#a8d5b5" opacity=".75"/>
-          <circle cx="396" cy="192" r="7"   fill="#4caf70" opacity=".8"/>
-          <circle cx="428" cy="193" r="5"   fill="#4caf70" opacity=".8"/>
-          <circle cx="463" cy="200" r="6.5" fill="#4caf70" opacity=".75"/>
-          <line x1="352" y1="196" x2="392" y2="207" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="392" y1="207" x2="396" y2="192" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="396" y1="192" x2="428" y2="193" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="428" y1="193" x2="463" y2="200" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="392" y1="207" x2="262" y2="98"  stroke="rgba(76,175,112,.15)" stroke-width="1" stroke-dasharray="7 5"/>
-          <line x1="392" y1="207" x2="108" y2="150" stroke="rgba(76,175,112,.12)" stroke-width="1" stroke-dasharray="7 5"/>
-          <line x1="392" y1="207" x2="451" y2="234" stroke="rgba(76,175,112,.18)" stroke-width="1" stroke-dasharray="7 5"/>
-          <circle cx="392" cy="207" r="14" fill="none" stroke="#4caf70" stroke-width="1.5" opacity=".5">
-            <animate attributeName="r" values="10;22;10" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values=".5;0;.5" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <text x="392" y="228" font-size="9" fill="rgba(255,255,255,.65)" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="600">Indonesia</text>
-          <text x="451" y="254" font-size="8" fill="rgba(255,255,255,.38)" text-anchor="middle" font-family="Poppins,sans-serif">Australia</text>
-          <text x="262" y="84"  font-size="8" fill="rgba(255,255,255,.38)" text-anchor="middle" font-family="Poppins,sans-serif">Europe</text>
-          <text x="108" y="118" font-size="8" fill="rgba(255,255,255,.38)" text-anchor="middle" font-family="Poppins,sans-serif">Americas</text>
-        </svg>
+        <img src="wisnu2.png" alt="Wisnu Boediono — field work" style="width:100%;height:100%;object-fit:cover;object-position:center;border-radius:16px;">
       </div>
     </div>
   </div>
@@ -430,14 +396,14 @@
   <div class="container">
     <p class="pt-label" data-i18n="pt_lbl">Dipercaya &amp; Berkolaborasi Dengan</p>
     <div class="pt-row">
-      <div class="pt-logo">ADB<br><small>Asian Development Bank</small></div>
-      <div class="pt-logo">World Bank</div>
-      <div class="pt-logo">FCDO<br><small>UK-PACT</small></div>
-      <div class="pt-logo">Kementerian ESDM<br><small>EBTKE</small></div>
-      <div class="pt-logo">Kementerian LHK</div>
-      <div class="pt-logo">Save the<br>Children</div>
-      <div class="pt-logo">Wildlife Conservation<br>Society</div>
-      <div class="pt-logo">MDF</div>
+      <div class="pt-logo"><img src="adb.png"                    alt="ADB — Asian Development Bank"></div>
+      <div class="pt-logo"><img src="worldbank.png"              alt="World Bank"></div>
+      <div class="pt-logo"><img src="ukpact.webp"                alt="FCDO / UK-PACT"></div>
+      <div class="pt-logo"><img src="kementrian%20esdm.svg"      alt="Kementerian ESDM — EBTKE"></div>
+      <div class="pt-logo"><img src="kementrian%20lhk.png"       alt="Kementerian Lingkungan Hidup & Kehutanan"></div>
+      <div class="pt-logo"><img src="save%20the%20children.png"  alt="Save the Children"></div>
+      <div class="pt-logo"><img src="wildlife.png"               alt="Wildlife Conservation Society"></div>
+      <div class="pt-logo"><img src="mdf.png"                    alt="MDF"></div>
     </div>
   </div>
 </section>
@@ -710,6 +676,7 @@ const T = {
     hero_role:'Energy & Climate Consultant',
     hero_intro:'Konsultan investasi untuk efisiensi energi & energi terbarukan: Life Cycle Cost Analysis (LCCA), NPV, IRR, persiapan & linkage dengan ESCO.',
     hero_btn:'Diskusikan Kebutuhan Advisory Anda',
+    sn_usd:'USD 1,1 jt',
     hs1:'Tahun Pengalaman', hs2:'Dana Green Economy', hs3:'Petani Dijangkau', hs4:'Program Nasional Dipimpin',
     badge1_s:'ISO 50001', badge1_p:'Tersertifikasi HAKE 2023',
     badge2_s:'11+ Tahun', badge2_p:'Energy & Climate',
@@ -805,6 +772,7 @@ const T = {
     hero_role:'Energy & Climate Consultant',
     hero_intro:'Investment consultant for energy efficiency & renewable energy: Life Cycle Cost Analysis (LCCA), NPV, IRR, preparation & linkage with ESCO.',
     hero_btn:'Discuss Your Advisory Needs',
+    sn_usd:'USD 1.1M',
     hs1:'Years of Experience', hs2:'Green Economy Funding', hs3:'Farmers Reached', hs4:'National Programme Led',
     badge1_s:'ISO 50001', badge1_p:'Certified HAKE 2023',
     badge2_s:'11+ Years', badge2_p:'Energy & Climate',
