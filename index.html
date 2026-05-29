@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wisnu Boediono | Energy &amp; Climate Consultant — Wishnu Hijau</title>
+  <meta name="description" content="Energy investment advisor, decarbonisation consultant, and ISO 50001/50005 specialist with 11 years of experience across ADB, World Bank, FCDO, and Indonesian government." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design tokens ── */
+    :root {
+      --gp:   #2d8a4e;
+      --gl:   #4caf70;
+      --gpa:  #e8f5ed;
+      --gd:   #1a5c32;
+      --ga:   #a8d5b5;
+      --wh:   #ffffff;
+      --dk:   #1c2b1a;
+      --gr:   #6b7280;
+      --lg:   #f3f8f4;
+      --bd:   #d1e7d8;
+      --sh:   0 4px 20px rgba(45,138,78,.12);
+      --shl:  0 8px 40px rgba(45,138,78,.18);
+      --r:    16px;
+      --rs:   10px;
+      --ease: all .3s ease;
+      --nh:   72px;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: var(--dk); background: var(--wh); line-height: 1.6; overflow-x: hidden; }
+    img  { max-width: 100%; display: block; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+
+    /* ── Utilities ── */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .stag   { display: inline-block; background: var(--gpa); color: var(--gd); font-size: .76rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 14px; }
+    .stitle { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 14px; }
+    .sdesc  { font-size: 1.02rem; color: var(--gr); max-width: 560px; line-height: 1.75; }
+    .sh     { margin-bottom: 52px; }
+    .sh.c   { text-align: center; }
+    .sh.c .sdesc { margin: 0 auto; }
+
+    /* ── Buttons ── */
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 100px; font-family: inherit; font-size: .93rem; font-weight: 600; cursor: pointer; transition: var(--ease); border: none; }
+    .bp  { background: var(--gp); color: #fff; }
+    .bp:hover  { background: var(--gd); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,138,78,.35); }
+    .bw  { background: #fff; color: var(--gd); }
+    .bw:hover  { background: var(--gpa); transform: translateY(-2px); }
+    .bwa { background: #25D366; color: #fff; }
+    .bwa:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,.4); }
+
+    /* ── Scroll-reveal animation ── */
+    .rv { opacity: 0; transform: translateY(22px); transition: opacity .5s ease, transform .5s ease; }
+    .rv.on { opacity: 1; transform: translateY(0); }
+
+    /* ── Navigation ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nh); transition: var(--ease); }
+    .nav.sc { background: rgba(255,255,255,.97); box-shadow: 0 2px 20px rgba(0,0,0,.08); backdrop-filter: blur(10px); }
+    .nav-in { display: flex; align-items: center; justify-content: space-between; height: 100%; }
+    .logo    { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.18rem; color: var(--gd); }
+    .logo-ic { width: 36px; height: 36px; background: var(--gp); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .nav-links { display: flex; gap: 4px; align-items: center; }
+    .nav-links a { padding: 8px 15px; border-radius: 100px; font-size: .88rem; font-weight: 500; color: var(--dk); transition: var(--ease); }
+    .nav-links a:hover, .nav-links a.act { background: var(--gpa); color: var(--gp); }
+    .nav-cta { background: var(--gp) !important; color: #fff !important; }
+    .nav-cta:hover { background: var(--gd) !important; }
+
+    /* Language switcher */
+    .lang-sw { display: flex; border: 1.5px solid var(--bd); border-radius: 100px; overflow: hidden; flex-shrink: 0; margin-left: 8px; }
+    .ls-btn  { padding: 5px 12px; font-size: .76rem; font-weight: 700; background: none; border: none; cursor: pointer; color: var(--gr); font-family: inherit; transition: var(--ease); }
+    .ls-btn.act { background: var(--gp); color: #fff; }
+    .ls-sep  { width: 1px; background: var(--bd); flex-shrink: 0; }
+
+    /* Hamburger (mobile) */
+    .hbg { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; margin-left: 8px; }
+    .hbg span { display: block; width: 24px; height: 2px; background: var(--dk); border-radius: 2px; transition: var(--ease); }
+    .hbg.op span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hbg.op span:nth-child(2) { opacity: 0; }
+    .hbg.op span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Hero ── */
+    #home { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg,#f0faf3 0%,#fff 50%,#e8f5ed 100%); padding-top: var(--nh); position: relative; overflow: hidden; }
+    #home::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle,rgba(45,138,78,.07) 0%,transparent 70%); border-radius: 50%; }
+    .hero-g     { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 80px 0; position: relative; z-index: 1; }
+    .hero-hi    { font-size: .98rem; font-weight: 500; color: var(--gp); margin-bottom: 6px; }
+    .hero-name  { font-size: clamp(2.2rem,5vw,3.6rem); font-weight: 800; line-height: 1.1; margin-bottom: 12px; }
+    .hero-name span { color: var(--gp); }
+    .hero-role  { display: inline-block; background: var(--gpa); color: var(--gd); font-size: .97rem; font-weight: 500; padding: 6px 16px; border-radius: 100px; margin-bottom: 22px; }
+    .hero-intro { font-size: 1.03rem; color: var(--gr); line-height: 1.8; margin-bottom: 32px; max-width: 480px; }
+    .hero-acts  { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 28px; margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--bd); flex-wrap: wrap; }
+    .hs-num     { font-size: 1.6rem; font-weight: 800; color: var(--gp); line-height: 1; }
+    .hs-label   { font-size: .72rem; color: var(--gr); margin-top: 3px; }
+    .hero-photo-frame { width: 100%; aspect-ratio: 4/5; max-width: 420px; margin: 0 auto; border-radius: 28px; overflow: hidden; box-shadow: var(--shl); position: relative; }
+    .hbadge  { position: absolute; bottom: -14px; left: -14px; background: #fff; border-radius: 14px; padding: 12px 16px; box-shadow: var(--shl); display: flex; align-items: center; gap: 10px; }
+    .hbadge2 { bottom: auto; top: -14px; left: auto; right: -14px; }
+    .hbadge-ic { width: 36px; height: 36px; background: var(--gpa); border-radius: 9px; display: flex; align-items: center; justify-content: center; }
+    .hbadge-t strong { display: block; font-size: .88rem; }
+    .hbadge-t span   { font-size: .74rem; color: var(--gr); }
+
+    /* ── Services ── */
+    #services { padding: 100px 0; background: var(--wh); }
+    .svc-g { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .svc-c { background: var(--wh); border: 1px solid var(--bd); border-radius: var(--r); padding: 30px 26px; transition: var(--ease); position: relative; overflow: hidden; }
+    .svc-c::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0; background: var(--gp); transition: var(--ease); }
+    .svc-c:hover { box-shadow: var(--sh); transform: translateY(-4px); border-color: var(--ga); }
+    .svc-c:hover::before { height: 100%; }
+    .svc-ic { width: 54px; height: 54px; background: var(--gpa); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--gp); }
+    .svc-c h3 { font-size: 1.03rem; font-weight: 700; margin-bottom: 9px; }
+    .svc-c p  { font-size: .88rem; color: var(--gr); line-height: 1.7; }
+
+    /* ── Impact ── */
+    #impact { padding: 100px 0; background: var(--gd); color: #fff; position: relative; overflow: hidden; }
+    #impact::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='2.5' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E"); }
+    .imp-g  { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .imp-c .stag  { background: rgba(255,255,255,.15); color: #fff; }
+    .imp-c .stitle { color: #fff; }
+    .imp-c .sdesc  { color: rgba(255,255,255,.72); }
+    .imp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 32px; }
+    .stat-c  { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--rs); padding: 22px; text-align: center; }
+    .sn { font-size: 1.9rem; font-weight: 800; color: var(--ga); line-height: 1; }
+    .sl { font-size: .78rem; color: rgba(255,255,255,.62); margin-top: 7px; }
+    .map-wrap { width: 100%; aspect-ratio: 16/10; border-radius: var(--r); overflow: hidden; background: rgba(255,255,255,.05); }
+    .map-wrap svg { width: 100%; height: 100%; }
+
+    /* ── Partners ── */
+    #partners { padding: 64px 0; background: var(--lg); border-top: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
+    .pt-label { text-align: center; font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gr); margin-bottom: 32px; }
+    .pt-row   { display: flex; gap: 16px; align-items: center; justify-content: center; flex-wrap: wrap; }
+    .pt-logo  { width: 148px; height: 62px; background: #fff; border: 1px solid var(--bd); border-radius: var(--rs); display: flex; align-items: center; justify-content: center; font-size: .72rem; font-weight: 600; color: var(--gr); text-align: center; padding: 8px; transition: var(--ease); }
+    .pt-logo:hover { border-color: var(--gp); box-shadow: 0 2px 12px rgba(45,138,78,.12); color: var(--gd); }
+
+    /* ── Programme & Projects ── */
+    #projects { padding: 100px 0; background: var(--wh); }
+    .proj-g { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .proj-c { background: var(--wh); border: 1px solid var(--bd); border-radius: var(--r); padding: 28px; transition: var(--ease); border-top: 3px solid var(--gp); }
+    .proj-c:hover { box-shadow: var(--sh); transform: translateY(-4px); }
+    .proj-c h4 { font-size: 1rem; font-weight: 700; color: var(--dk); margin-bottom: 10px; }
+    .proj-c p  { font-size: .87rem; color: var(--gr); line-height: 1.7; }
+
+    /* ── Audience ── */
+    #audience { padding: 100px 0; background: var(--lg); }
+    .aud-g { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .aud-c { border: 1.5px solid var(--bd); border-radius: var(--r); padding: 26px 22px; display: flex; gap: 14px; transition: var(--ease); background: var(--wh); }
+    .aud-c:hover { border-color: var(--gp); background: var(--gpa); transform: translateY(-4px); box-shadow: var(--sh); }
+    .aud-ic { width: 42px; height: 42px; background: var(--gpa); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--gp); }
+    .aud-c:hover .aud-ic { background: #fff; }
+    .aud-c h4 { font-size: .96rem; font-weight: 700; margin-bottom: 5px; }
+    .aud-c p  { font-size: .83rem; color: var(--gr); line-height: 1.65; }
+
+    /* ── Publications ── */
+    #publications { padding: 100px 0; background: var(--wh); }
+    .pub-g { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .pub-c { background: var(--lg); border: 1px solid var(--bd); border-radius: var(--r); padding: 30px 26px; transition: var(--ease); display: flex; flex-direction: column; gap: 12px; }
+    .pub-c:hover { box-shadow: var(--sh); transform: translateY(-4px); border-color: var(--ga); }
+    .pub-ic { width: 44px; height: 44px; background: var(--gpa); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--gp); }
+    .pub-c h4 { font-size: 1rem; font-weight: 700; color: var(--dk); }
+    .pub-c p  { font-size: .87rem; color: var(--gr); line-height: 1.7; flex: 1; }
+
+    /* ── Certifications ── */
+    #certifications { padding: 100px 0; background: var(--lg); }
+    .cert-g { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .cert-block { background: var(--wh); border-radius: var(--r); padding: 36px; border: 1px solid var(--bd); }
+    .cert-block h4 { font-size: 1rem; font-weight: 700; color: var(--dk); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--gpa); }
+    .cert-tags { display: flex; flex-wrap: wrap; gap: 9px; }
+    .cert-tag  { background: var(--gpa); border: 1px solid var(--ga); border-radius: 100px; padding: 5px 14px; font-size: .82rem; font-weight: 500; color: var(--gd); }
+
+    /* ── Why / Profile ── */
+    #why { padding: 100px 0; background: var(--wh); }
+    .why-g  { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .why-c  { background: var(--lg); border-radius: var(--r); padding: 34px; border-left: 4px solid var(--gp); transition: var(--ease); }
+    .why-c:hover { box-shadow: var(--sh); transform: translateX(4px); }
+    .why-n  { font-size: 2rem; font-weight: 800; color: var(--gpa); line-height: 1; margin-bottom: 12px; }
+    .why-c h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 11px; line-height: 1.4; }
+    .why-c p  { font-size: .88rem; color: var(--gr); line-height: 1.75; }
+    .profile-intro { font-size: 1rem; color: var(--gr); line-height: 1.8; margin-bottom: 40px; padding: 22px 26px; background: var(--gpa); border-radius: var(--r); border-left: 4px solid var(--gp); }
+
+    /* ── CTA / Contact ── */
+    #contact { padding: 100px 0; background: linear-gradient(135deg,var(--gp) 0%,var(--gd) 100%); color: #fff; text-align: center; position: relative; overflow: hidden; }
+    #contact::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: rgba(255,255,255,.05); border-radius: 50%; }
+    #contact::after  { content: ''; position: absolute; bottom: -80px; left: -80px; width: 250px; height: 250px; background: rgba(255,255,255,.04); border-radius: 50%; }
+    .cta-w { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+    .cta-w .stag { background: rgba(255,255,255,.18); color: #fff; }
+    .cta-w h2   { font-size: clamp(1.9rem,4vw,3rem); font-weight: 800; color: #fff; margin-bottom: 14px; line-height: 1.2; }
+    .cta-w > p  { color: rgba(255,255,255,.82); font-size: 1.03rem; margin-bottom: 28px; line-height: 1.75; }
+    .cta-email  { font-size: .98rem; color: rgba(255,255,255,.82); margin-bottom: 26px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .cta-email a { color: #fff; text-decoration: underline; }
+    .cta-bts { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── Footer ── */
+    footer { background: var(--dk); color: rgba(255,255,255,.76); padding: 60px 0 28px; }
+    .ft-g  { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+    .ft-brand .logo { color: #fff; margin-bottom: 12px; }
+    .ft-brand p { font-size: .86rem; color: rgba(255,255,255,.52); line-height: 1.75; max-width: 270px; }
+    .ft-soc { display: flex; gap: 9px; margin-top: 20px; }
+    .si { width: 37px; height: 37px; background: rgba(255,255,255,.08); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.62); font-size: .7rem; font-weight: 700; transition: var(--ease); }
+    .si:hover { background: var(--gp); color: #fff; }
+    .ft-col h5 { font-size: .86rem; font-weight: 700; color: #fff; margin-bottom: 14px; }
+    .ft-col ul { display: flex; flex-direction: column; gap: 8px; }
+    .ft-col li a { font-size: .82rem; color: rgba(255,255,255,.52); transition: var(--ease); }
+    .ft-col li a:hover { color: var(--ga); }
+    .fc-item { display: flex; align-items: flex-start; gap: 9px; font-size: .82rem; color: rgba(255,255,255,.52); margin-bottom: 9px; }
+    .fc-item svg { flex-shrink: 0; margin-top: 2px; }
+    .fc-item a { color: inherit; transition: var(--ease); }
+    .fc-item a:hover { color: var(--ga); }
+    .ft-bot { border-top: 1px solid rgba(255,255,255,.08); padding-top: 26px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .ft-bot p { font-size: .78rem; color: rgba(255,255,255,.35); }
+
+    /* ── Scroll-to-top button ── */
+    .stb { position: fixed; bottom: 26px; right: 26px; width: 42px; height: 42px; background: var(--gp); color: #fff; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: var(--sh); transition: var(--ease); opacity: 0; pointer-events: none; z-index: 999; }
+    .stb.vis { opacity: 1; pointer-events: all; }
+    .stb:hover { background: var(--gd); transform: translateY(-2px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .svc-g  { grid-template-columns: repeat(2,1fr); }
+      .proj-g { grid-template-columns: repeat(2,1fr); }
+      .pub-g  { grid-template-columns: repeat(2,1fr); }
+      .ft-g   { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      :root { --nh: 60px; }
+      .hbg { display: flex; }
+      .nav-links { position: fixed; top: var(--nh); left: 0; right: 0; background: #fff; flex-direction: column; padding: 18px 22px 26px; box-shadow: 0 8px 20px rgba(0,0,0,.1); transform: translateY(-200%); transition: transform .35s ease; gap: 4px; }
+      .nav-links.op { transform: translateY(0); }
+      .nav-links a  { padding: 11px 14px; width: 100%; text-align: center; }
+      .hero-g   { grid-template-columns: 1fr; gap: 36px; padding: 56px 0; }
+      .hero-photo { order: -1; }
+      .hero-photo-frame { max-width: 270px; }
+      .hbadge   { display: none; }
+      .hero-stats { gap: 16px; }
+      .imp-g    { grid-template-columns: 1fr; gap: 36px; }
+      .imp-stats { grid-template-columns: 1fr 1fr; }
+      .why-g    { grid-template-columns: 1fr; }
+      .aud-g    { grid-template-columns: 1fr; }
+      .svc-g    { grid-template-columns: 1fr; }
+      .proj-g   { grid-template-columns: 1fr; }
+      .pub-g    { grid-template-columns: 1fr; }
+      .cert-g   { grid-template-columns: 1fr; }
+      .ft-g     { grid-template-columns: 1fr; gap: 24px; }
+      .ft-bot   { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .hero-acts .btn { width: 100%; justify-content: center; }
+      .cta-bts { flex-direction: column; }
+      .cta-bts .btn { width: 100%; justify-content: center; }
+      .pt-logo { width: 120px; height: 52px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <div class="nav-in">
+      <a href="#home" class="logo">
+        <div class="logo-ic">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 3-8 3"/></svg>
+        </div>
+        Wishnu Hijau
+      </a>
+      <ul class="nav-links" id="nl">
+        <li><a href="#home"     class="act" data-i18n="nav_home">Beranda</a></li>
+        <li><a href="#services"            data-i18n="nav_svc">Layanan</a></li>
+        <li><a href="#impact"              data-i18n="nav_imp">Dampak</a></li>
+        <li><a href="#projects"            data-i18n="nav_proj">Proyek</a></li>
+        <li><a href="#why"                 data-i18n="nav_why">Profile</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav_con">Kontak</a></li>
+      </ul>
+      <div class="lang-sw" id="langSw">
+        <button class="ls-btn act" data-lang="id">ID</button>
+        <div class="ls-sep"></div>
+        <button class="ls-btn" data-lang="en">EN</button>
+      </div>
+      <button class="hbg" id="hbg" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section id="home">
+  <div class="container">
+    <div class="hero-g">
+      <div>
+        <p class="hero-hi" data-i18n="hero_hi">🌿 Halo, Saya</p>
+        <h1 class="hero-name">Wisnu Boediono<br><span>Wishnu Hijau</span></h1>
+        <span class="hero-role" data-i18n="hero_role">Energy &amp; Climate Consultant</span>
+        <p class="hero-intro" data-i18n="hero_intro">Konsultan investasi untuk efisiensi energi &amp; energi terbarukan: Life Cycle Cost Analysis (LCCA), NPV, IRR, persiapan &amp; linkage dengan ESCO.</p>
+        <div class="hero-acts">
+          <a href="https://wa.me/6281381254097" target="_blank" rel="noopener" class="btn bp">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            <span data-i18n="hero_btn">Diskusikan Kebutuhan Advisory Anda</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="hs-num">11+</div><div class="hs-label" data-i18n="hs1">Tahun Pengalaman</div></div>
+          <div><div class="hs-num">USD 1,1 jt</div><div class="hs-label" data-i18n="hs2">Dana Green Economy</div></div>
+          <div><div class="hs-num">21.500</div><div class="hs-label" data-i18n="hs3">Petani Dijangkau</div></div>
+          <div><div class="hs-num">UK-PACT</div><div class="hs-label" data-i18n="hs4">Program Nasional Dipimpin</div></div>
+        </div>
+      </div>
+      <div style="position:relative">
+        <div class="hero-photo-frame">
+          <img src="wisnu1.jpeg" alt="Wisnu Boediono — Energy & Climate Consultant" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+        </div>
+        <div class="hbadge">
+          <div class="hbadge-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2d8a4e" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="hbadge-t"><strong data-i18n="badge1_s">ISO 50001</strong><span data-i18n="badge1_p">Tersertifikasi HAKE 2023</span></div>
+        </div>
+        <div class="hbadge hbadge2">
+          <div class="hbadge-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2d8a4e" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+          <div class="hbadge-t"><strong data-i18n="badge2_s">11+ Tahun</strong><span data-i18n="badge2_p">Energy & Climate</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services & Expertise ── -->
+<section id="services">
+  <div class="container">
+    <div class="sh">
+      <span class="stag" data-i18n="svc_tag">Layanan</span>
+      <h2 class="stitle" data-i18n="svc_title">Layanan &amp; Keahlian</h2>
+      <p class="sdesc" data-i18n="svc_desc">Advisory teknis berbasis metodologi terstandarisasi dan rekam jejak yang dapat diverifikasi di tingkat nasional maupun internasional.</p>
+    </div>
+    <div class="svc-g">
+      <div class="svc-c rv">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 data-i18n="s1_t">Investment Advisory EE &amp; RE</h3>
+        <p data-i18n="s1_d">LCCA, NPV, IRR, financial modelling, dan linkage ke ESCO untuk proyek efisiensi energi dan energi terbarukan.</p>
+      </div>
+      <div class="svc-c rv">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
+        <h3 data-i18n="s2_t">Decarbonisation &amp; EE Programme Management</h3>
+        <p data-i18n="s2_d">Manajemen program dan proyek efisiensi energi &amp; dekarbonisasi dari skala SME hingga nasional.</p>
+      </div>
+      <div class="svc-c rv">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg></div>
+        <h3 data-i18n="s3_t">ISO 50001 / 50005 Energy Management System</h3>
+        <p data-i18n="s3_d">Implementasi &amp; pendampingan sistem manajemen energi sesuai standar internasional ISO 50001 dan ISO 50005.</p>
+      </div>
+      <div class="svc-c rv">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <h3 data-i18n="s4_t">Climate &amp; Energy Policy Advisory</h3>
+        <p data-i18n="s4_d">Advisory kebijakan iklim &amp; energi, termasuk government liaison dengan ESDM/EBTKE dan KLHK.</p>
+      </div>
+      <div class="svc-c rv">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3 data-i18n="s5_t">Capacity Building &amp; Training</h3>
+        <p data-i18n="s5_d">PMD Pro, RBM, Theory of Change, MEAL — pelatihan berbasis metodologi internasional yang terstandarisasi.</p>
+      </div>
+      <div class="svc-c rv">
+        <div class="svc-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg></div>
+        <h3 data-i18n="s6_t">Research, Policy Brief &amp; Stakeholder Facilitation</h3>
+        <p data-i18n="s6_d">Riset terapan, penyusunan policy brief, dan fasilitasi pemangku kepentingan multi-sektor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Track Record / Impact ── -->
+<section id="impact">
+  <div class="container">
+    <div class="imp-g">
+      <div class="imp-c">
+        <span class="stag" data-i18n="imp_tag">Rekam Jejak</span>
+        <h2 class="stitle" data-i18n="imp_title">Rekam Jejak yang Terukur &amp; Terverifikasi</h2>
+        <p class="sdesc" data-i18n="imp_desc">Pengalaman lintas pemerintah, donor internasional, dan program akar rumput — dengan hasil yang dapat diukur dan diverifikasi.</p>
+        <div class="imp-stats">
+          <div class="stat-c rv"><div class="sn">11+</div><div class="sl" data-i18n="st1">Tahun Pengalaman</div></div>
+          <div class="stat-c rv"><div class="sn">USD 1,1 jt</div><div class="sl" data-i18n="st2">Dana Green Economy Diamankan</div></div>
+          <div class="stat-c rv"><div class="sn">21.500</div><div class="sl" data-i18n="st3">Petani Kecil Dijangkau</div></div>
+          <div class="stat-c rv"><div class="sn">UK-PACT</div><div class="sl" data-i18n="st4">Program Nasional Dipimpin</div></div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <svg viewBox="0 0 560 350" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dg" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="rgba(255,255,255,.06)"/></pattern>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#4caf70" stop-opacity=".35"/><stop offset="100%" stop-color="#4caf70" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="560" height="350" fill="url(#dg)" rx="14"/>
+          <ellipse cx="108" cy="150" rx="68" ry="95" fill="rgba(255,255,255,.055)"/>
+          <ellipse cx="262" cy="98"  rx="62" ry="52" fill="rgba(255,255,255,.055)"/>
+          <ellipse cx="268" cy="202" rx="56" ry="78" fill="rgba(255,255,255,.055)"/>
+          <ellipse cx="388" cy="118" rx="115" ry="72" fill="rgba(255,255,255,.055)"/>
+          <ellipse cx="451" cy="234" rx="52"  ry="36" fill="rgba(255,255,255,.055)"/>
+          <circle cx="399" cy="205" r="48" fill="url(#glow)"/>
+          <circle cx="352" cy="196" r="5.5" fill="#4caf70" opacity=".9"/>
+          <circle cx="368" cy="200" r="4.5" fill="#4caf70" opacity=".85"/>
+          <circle cx="392" cy="207" r="7"   fill="#a8d5b5" opacity=".95"/>
+          <circle cx="410" cy="208" r="5"   fill="#a8d5b5" opacity=".8"/>
+          <circle cx="423" cy="207" r="4"   fill="#a8d5b5" opacity=".75"/>
+          <circle cx="396" cy="192" r="7"   fill="#4caf70" opacity=".8"/>
+          <circle cx="428" cy="193" r="5"   fill="#4caf70" opacity=".8"/>
+          <circle cx="463" cy="200" r="6.5" fill="#4caf70" opacity=".75"/>
+          <line x1="352" y1="196" x2="392" y2="207" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="392" y1="207" x2="396" y2="192" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="396" y1="192" x2="428" y2="193" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="428" y1="193" x2="463" y2="200" stroke="rgba(76,175,112,.35)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <line x1="392" y1="207" x2="262" y2="98"  stroke="rgba(76,175,112,.15)" stroke-width="1" stroke-dasharray="7 5"/>
+          <line x1="392" y1="207" x2="108" y2="150" stroke="rgba(76,175,112,.12)" stroke-width="1" stroke-dasharray="7 5"/>
+          <line x1="392" y1="207" x2="451" y2="234" stroke="rgba(76,175,112,.18)" stroke-width="1" stroke-dasharray="7 5"/>
+          <circle cx="392" cy="207" r="14" fill="none" stroke="#4caf70" stroke-width="1.5" opacity=".5">
+            <animate attributeName="r" values="10;22;10" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values=".5;0;.5" dur="3s" repeatCount="indefinite"/>
+          </circle>
+          <text x="392" y="228" font-size="9" fill="rgba(255,255,255,.65)" text-anchor="middle" font-family="Poppins,sans-serif" font-weight="600">Indonesia</text>
+          <text x="451" y="254" font-size="8" fill="rgba(255,255,255,.38)" text-anchor="middle" font-family="Poppins,sans-serif">Australia</text>
+          <text x="262" y="84"  font-size="8" fill="rgba(255,255,255,.38)" text-anchor="middle" font-family="Poppins,sans-serif">Europe</text>
+          <text x="108" y="118" font-size="8" fill="rgba(255,255,255,.38)" text-anchor="middle" font-family="Poppins,sans-serif">Americas</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Partners ── -->
+<section id="partners">
+  <div class="container">
+    <p class="pt-label" data-i18n="pt_lbl">Dipercaya &amp; Berkolaborasi Dengan</p>
+    <div class="pt-row">
+      <div class="pt-logo">ADB<br><small>Asian Development Bank</small></div>
+      <div class="pt-logo">World Bank</div>
+      <div class="pt-logo">FCDO<br><small>UK-PACT</small></div>
+      <div class="pt-logo">Kementerian ESDM<br><small>EBTKE</small></div>
+      <div class="pt-logo">Kementerian LHK</div>
+      <div class="pt-logo">Save the<br>Children</div>
+      <div class="pt-logo">Wildlife Conservation<br>Society</div>
+      <div class="pt-logo">MDF</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Programme & Projects ── -->
+<section id="projects">
+  <div class="container">
+    <div class="sh">
+      <span class="stag" data-i18n="proj_tag">Rekam Jejak</span>
+      <h2 class="stitle" data-i18n="proj_title">Program &amp; Proyek</h2>
+      <p class="sdesc" data-i18n="proj_desc">Proyek nyata dengan lembaga internasional, kementerian, dan organisasi masyarakat — semua dapat diverifikasi.</p>
+    </div>
+    <div class="proj-g">
+      <div class="proj-c rv">
+        <h4 data-i18n="p1_t">UK-PACT Indonesia (FCDO)</h4>
+        <p data-i18n="p1_d">Koordinator nasional program dekarbonisasi &amp; efisiensi energi untuk usaha kecil dan menengah (SME) di Indonesia.</p>
+      </div>
+      <div class="proj-c rv">
+        <h4 data-i18n="p2_t">ISO 50005 Energy Management Building Book</h4>
+        <p data-i18n="p2_d">Disusun untuk Kementerian ESDM/EBTKE sebagai panduan implementasi sistem manajemen energi tingkat nasional.</p>
+      </div>
+      <div class="proj-c rv">
+        <h4 data-i18n="p3_t">POME — Online Energy Management Reporting System</h4>
+        <p data-i18n="p3_d">Pengembangan sistem pelaporan manajemen energi secara daring untuk skala nasional.</p>
+      </div>
+      <div class="proj-c rv">
+        <h4 data-i18n="p4_t">Dekarbonisasi &amp; Capacity Building Bali (MDF)</h4>
+        <p data-i18n="p4_d">Program dekarbonisasi dan peningkatan kapasitas untuk sektor bisnis di Bali, didukung oleh MDF — sedang berjalan.</p>
+      </div>
+      <div class="proj-c rv">
+        <h4 data-i18n="p5_t">Cocoa Life (Save the Children)</h4>
+        <p data-i18n="p5_d">Penjangkauan 21.500 petani kecil di Sulawesi Selatan, Lampung, dan Sumatera Barat dalam program pemberdayaan petani kakao.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Who Should Work With Me ── -->
+<section id="audience">
+  <div class="container">
+    <div class="sh c">
+      <span class="stag" data-i18n="aud_tag">Klien &amp; Mitra</span>
+      <h2 class="stitle" data-i18n="aud_title">Siapa yang Tepat Bekerja Sama?</h2>
+      <p class="sdesc" data-i18n="aud_desc">Saya melayani organisasi yang membutuhkan advisory teknis berbasis data dengan rekam jejak yang terverifikasi.</p>
+    </div>
+    <div class="aud-g">
+      <div class="aud-c rv">
+        <div class="aud-ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div><h4 data-i18n="a1_h">Lembaga Donor &amp; Multilateral</h4><p data-i18n="a1_p">ADB, World Bank, FCDO, GIZ, dan lembaga donor yang membutuhkan konsultan EE/RE dengan pengalaman lapangan yang terverifikasi.</p></div>
+      </div>
+      <div class="aud-c rv">
+        <div class="aud-ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+        <div><h4 data-i18n="a2_h">Kementerian &amp; Badan Pemerintah</h4><p data-i18n="a2_p">ESDM, KLHK, BAPPENAS, dan instansi pemerintah yang memerlukan advisory kebijakan dan implementasi teknis EE/RE.</p></div>
+      </div>
+      <div class="aud-c rv">
+        <div class="aud-ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <div><h4 data-i18n="a3_h">Perusahaan &amp; Industri</h4><p data-i18n="a3_p">Industri manufaktur, properti, dan sektor lain yang menargetkan efisiensi energi, dekarbonisasi, atau sertifikasi ISO 50001.</p></div>
+      </div>
+      <div class="aud-c rv">
+        <div class="aud-ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div><h4 data-i18n="a4_h">NGO &amp; Program Pemberdayaan</h4><p data-i18n="a4_p">Organisasi masyarakat sipil yang memerlukan keahlian teknis EE/RE dan kapasitas metodologi RBM/MEAL.</p></div>
+      </div>
+      <div class="aud-c rv">
+        <div class="aud-ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div><h4 data-i18n="a5_h">Pengembang Proyek EE &amp; RE</h4><p data-i18n="a5_p">Developer proyek energi terbarukan atau efisiensi energi yang membutuhkan analisis investasi, LCCA, dan linkage ESCO.</p></div>
+      </div>
+      <div class="aud-c rv">
+        <div class="aud-ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div><h4 data-i18n="a6_h">Institusi Akademik &amp; Riset</h4><p data-i18n="a6_p">Universitas dan lembaga riset yang memerlukan kolaborasi policy brief atau penelitian terapan di bidang energi dan iklim.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Publications ── -->
+<section id="publications">
+  <div class="container">
+    <div class="sh c">
+      <span class="stag" data-i18n="pub_tag">Publikasi</span>
+      <h2 class="stitle" data-i18n="pub_title">Publikasi &amp; Kontribusi</h2>
+      <p class="sdesc" data-i18n="pub_desc">Kontribusi teknis yang dipublikasikan dan digunakan oleh lembaga pemerintah serta institusi internasional.</p>
+    </div>
+    <div class="pub-g">
+      <div class="pub-c rv">
+        <div class="pub-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+        <h4 data-i18n="pub1_t">ISO 50005 Energy Management Building Book</h4>
+        <p data-i18n="pub1_d">Panduan implementasi sistem manajemen energi untuk Kementerian ESDM/EBTKE — diterbitkan dan diadopsi secara resmi.</p>
+      </div>
+      <div class="pub-c rv">
+        <div class="pub-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h4 data-i18n="pub2_t">POME — Online Energy Management Reporting System</h4>
+        <p data-i18n="pub2_d">Sistem pelaporan manajemen energi secara daring yang dikembangkan untuk skala operasional nasional.</p>
+      </div>
+      <div class="pub-c rv">
+        <div class="pub-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <h4 data-i18n="pub3_t">Policy Brief &amp; Laporan Riset EE/Dekarbonisasi</h4>
+        <p data-i18n="pub3_d">Policy brief dan laporan riset terapan di bidang efisiensi energi dan dekarbonisasi untuk donor dan pemerintah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Certifications & Technical Expertise ── -->
+<section id="certifications">
+  <div class="container">
+    <div class="sh c">
+      <span class="stag" data-i18n="cert_tag">Keahlian Teknis</span>
+      <h2 class="stitle" data-i18n="cert_title">Sertifikasi &amp; Metodologi</h2>
+      <p class="sdesc" data-i18n="cert_desc">Sertifikasi internasional dan metodologi terstandarisasi yang menjadi landasan setiap penugasan konsultasi.</p>
+    </div>
+    <div class="cert-g">
+      <div class="cert-block rv">
+        <h4 data-i18n="cert_h1">Sertifikasi</h4>
+        <div class="cert-tags">
+          <span class="cert-tag">PMD Pro</span>
+          <span class="cert-tag">ISO 50001 (HAKE 2023)</span>
+          <span class="cert-tag">ISO 50005</span>
+          <span class="cert-tag" data-i18n="cert_mgr">Manager Energy Industry Course</span>
+        </div>
+      </div>
+      <div class="cert-block rv">
+        <h4 data-i18n="cert_h2">Metodologi</h4>
+        <div class="cert-tags">
+          <span class="cert-tag">RBM</span>
+          <span class="cert-tag">Theory of Change</span>
+          <span class="cert-tag">MEAL</span>
+          <span class="cert-tag">Logframe</span>
+          <span class="cert-tag" data-i18n="cert_vc">Value Chain Mapping</span>
+          <span class="cert-tag" data-i18n="cert_sh">Stakeholder Mapping</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Profile / Why Work With Me ── -->
+<section id="why">
+  <div class="container">
+    <div class="sh">
+      <span class="stag" data-i18n="why_tag">Profile</span>
+      <h2 class="stitle" data-i18n="why_title">Tentang Wisnu Boediono</h2>
+      <p class="sdesc" data-i18n="why_desc">Energy &amp; Climate Consultant dengan rekam jejak lintas sektor yang terverifikasi.</p>
+    </div>
+    <p class="profile-intro" data-i18n="profile_intro">11 tahun pengalaman lintas pemerintah–donor–akar rumput; lulusan universitas Australia (Murdoch, RMIT); pengalaman dari level menteri hingga 21.500 petani; bilingual EN/ID.</p>
+    <div class="why-g">
+      <div class="why-c rv">
+        <div class="why-n">01</div>
+        <h3 data-i18n="w1_h">Pengalaman Lintas Sektor</h3>
+        <p data-i18n="w1_p">11 tahun bergerak di lintas sektor: pemerintah (ESDM, KLHK), donor internasional (ADB, World Bank, FCDO), dan program akar rumput hingga 21.500 petani.</p>
+      </div>
+      <div class="why-c rv">
+        <div class="why-n">02</div>
+        <h3 data-i18n="w2_h">Latar Belakang Akademis Internasional</h3>
+        <p data-i18n="w2_p">Lulusan Murdoch University &amp; RMIT University, Australia — dengan fokus pada environmental management dan kebijakan energi.</p>
+      </div>
+      <div class="why-c rv">
+        <div class="why-n">03</div>
+        <h3 data-i18n="w3_h">Jaringan Institusional yang Luas</h3>
+        <p data-i18n="w3_p">Hubungan kerja aktif dengan ADB, World Bank, FCDO, Kementerian ESDM/EBTKE, KLHK, Save the Children, WCS, dan MDF.</p>
+      </div>
+      <div class="why-c rv">
+        <div class="why-n">04</div>
+        <h3 data-i18n="w4_h">Rekam Jejak Terukur</h3>
+        <p data-i18n="w4_p">USD 1,1 juta pendanaan green economy diamankan; 21.500 petani dijangkau; ISO 50005 Building Book &amp; POME diterbitkan untuk Kementerian ESDM.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact / CTA ── -->
+<section id="contact">
+  <div class="container">
+    <div class="cta-w">
+      <span class="stag" data-i18n="cta_tag">Kontak</span>
+      <h2 data-i18n="cta_title">Mulai Diskusi Konsultasi</h2>
+      <p data-i18n="cta_desc">Hubungi saya untuk mendiskusikan kebutuhan advisory, program efisiensi energi, atau peluang kolaborasi proyek.</p>
+      <p class="cta-email">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:wisnuboediono1@gmail.com">wisnuboediono1@gmail.com</a>
+      </p>
+      <div class="cta-bts">
+        <a href="https://wa.me/6281381254097" target="_blank" rel="noopener" class="btn bwa">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          <span data-i18n="cta_wa">Chat WhatsApp</span>
+        </a>
+        <a href="mailto:wisnuboediono1@gmail.com" class="btn bw">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span data-i18n="cta_email">Kirim Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="ft-g">
+      <div class="ft-brand">
+        <a href="#home" class="logo" style="color:#fff;margin-bottom:12px;display:inline-flex">
+          <div class="logo-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 3-8 3"/></svg></div>
+          Wishnu Hijau
+        </a>
+        <p data-i18n="ft_tag">Energy &amp; Climate Consultant — Investment Advisory, Decarbonisation, ISO 50001/50005, Policy Advisory.</p>
+        <div class="ft-soc">
+          <a href="[LINK_INSTAGRAM]" target="_blank" rel="noopener" class="si" aria-label="Instagram">IG</a>
+          <a href="[LINK_LINKEDIN]"  target="_blank" rel="noopener" class="si" aria-label="LinkedIn">LI</a>
+          <a href="[LINK_YOUTUBE]"   target="_blank" rel="noopener" class="si" aria-label="YouTube">YT</a>
+          <a href="https://wa.me/6281381254097" target="_blank" rel="noopener" class="si" aria-label="WhatsApp">WA</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h5 data-i18n="ft_nav">Navigasi</h5>
+        <ul>
+          <li><a href="#home"         data-i18n="nav_home">Beranda</a></li>
+          <li><a href="#services"     data-i18n="nav_svc">Layanan</a></li>
+          <li><a href="#impact"       data-i18n="nav_imp">Dampak</a></li>
+          <li><a href="#projects"     data-i18n="nav_proj">Proyek</a></li>
+          <li><a href="#publications" data-i18n="ft_pub">Publikasi</a></li>
+          <li><a href="#certifications" data-i18n="ft_cert">Sertifikasi</a></li>
+          <li><a href="#why"          data-i18n="nav_why">Profile</a></li>
+          <li><a href="#contact"      data-i18n="nav_con">Kontak</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5 data-i18n="ft_svc">Layanan</h5>
+        <ul>
+          <li><a href="#services" data-i18n="s1_t">Investment Advisory EE &amp; RE</a></li>
+          <li><a href="#services" data-i18n="s2_t">Decarbonisation &amp; EE Management</a></li>
+          <li><a href="#services" data-i18n="s3_t">ISO 50001 / 50005 EMS</a></li>
+          <li><a href="#services" data-i18n="s4_t">Climate &amp; Energy Policy</a></li>
+          <li><a href="#services" data-i18n="s5_t">Capacity Building &amp; Training</a></li>
+          <li><a href="#services" data-i18n="s6_t">Research &amp; Policy Brief</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h5 data-i18n="ft_con">Kontak</h5>
+        <div class="fc-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:wisnuboediono1@gmail.com">wisnuboediono1@gmail.com</a>
+        </div>
+        <div class="fc-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6 6l.83-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="https://wa.me/6281381254097">0813-8125-4097</a>
+        </div>
+        <div class="fc-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Bali, Indonesia
+        </div>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p data-i18n="ft_copy">© 2025 Wishnu Hijau. Hak cipta dilindungi.</p>
+      <p data-i18n="ft_made">Energy &amp; Climate Consulting — Bali, Indonesia 🌿</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Scroll to top ── -->
+<button class="stb" id="stb" aria-label="Kembali ke atas">
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+/* ── Translation dictionary ── */
+const T = {
+  id: {
+    nav_home:'Beranda', nav_svc:'Layanan', nav_imp:'Dampak', nav_proj:'Proyek', nav_why:'Profile', nav_con:'Kontak',
+    hero_hi:'🌿 Halo, Saya',
+    hero_role:'Energy & Climate Consultant',
+    hero_intro:'Konsultan investasi untuk efisiensi energi & energi terbarukan: Life Cycle Cost Analysis (LCCA), NPV, IRR, persiapan & linkage dengan ESCO.',
+    hero_btn:'Diskusikan Kebutuhan Advisory Anda',
+    hs1:'Tahun Pengalaman', hs2:'Dana Green Economy', hs3:'Petani Dijangkau', hs4:'Program Nasional Dipimpin',
+    badge1_s:'ISO 50001', badge1_p:'Tersertifikasi HAKE 2023',
+    badge2_s:'11+ Tahun', badge2_p:'Energy & Climate',
+
+    svc_tag:'Layanan', svc_title:'Layanan & Keahlian',
+    svc_desc:'Advisory teknis berbasis metodologi terstandarisasi dan rekam jejak yang dapat diverifikasi di tingkat nasional maupun internasional.',
+    s1_t:'Investment Advisory EE & RE',
+    s1_d:'LCCA, NPV, IRR, financial modelling, dan linkage ke ESCO untuk proyek efisiensi energi dan energi terbarukan.',
+    s2_t:'Decarbonisation & EE Programme Management',
+    s2_d:'Manajemen program dan proyek efisiensi energi & dekarbonisasi dari skala SME hingga nasional.',
+    s3_t:'ISO 50001 / 50005 Energy Management System',
+    s3_d:'Implementasi & pendampingan sistem manajemen energi sesuai standar internasional ISO 50001 dan ISO 50005.',
+    s4_t:'Climate & Energy Policy Advisory',
+    s4_d:'Advisory kebijakan iklim & energi, termasuk government liaison dengan ESDM/EBTKE dan KLHK.',
+    s5_t:'Capacity Building & Training',
+    s5_d:'PMD Pro, RBM, Theory of Change, MEAL — pelatihan berbasis metodologi internasional yang terstandarisasi.',
+    s6_t:'Research, Policy Brief & Stakeholder Facilitation',
+    s6_d:'Riset terapan, penyusunan policy brief, dan fasilitasi pemangku kepentingan multi-sektor.',
+
+    imp_tag:'Rekam Jejak', imp_title:'Rekam Jejak yang Terukur & Terverifikasi',
+    imp_desc:'Pengalaman lintas pemerintah, donor internasional, dan program akar rumput — dengan hasil yang dapat diukur dan diverifikasi.',
+    st1:'Tahun Pengalaman', st2:'Dana Green Economy Diamankan', st3:'Petani Kecil Dijangkau', st4:'Program Nasional Dipimpin',
+
+    pt_lbl:'Dipercaya & Berkolaborasi Dengan',
+
+    proj_tag:'Rekam Jejak', proj_title:'Program & Proyek',
+    proj_desc:'Proyek nyata dengan lembaga internasional, kementerian, dan organisasi masyarakat — semua dapat diverifikasi.',
+    p1_t:'UK-PACT Indonesia (FCDO)',
+    p1_d:'Koordinator nasional program dekarbonisasi & efisiensi energi untuk usaha kecil dan menengah (SME) di Indonesia.',
+    p2_t:'ISO 50005 Energy Management Building Book',
+    p2_d:'Disusun untuk Kementerian ESDM/EBTKE sebagai panduan implementasi sistem manajemen energi tingkat nasional.',
+    p3_t:'POME — Online Energy Management Reporting System',
+    p3_d:'Pengembangan sistem pelaporan manajemen energi secara daring untuk skala nasional.',
+    p4_t:'Dekarbonisasi & Capacity Building Bali (MDF)',
+    p4_d:'Program dekarbonisasi dan peningkatan kapasitas untuk sektor bisnis di Bali, didukung oleh MDF — sedang berjalan.',
+    p5_t:'Cocoa Life (Save the Children)',
+    p5_d:'Penjangkauan 21.500 petani kecil di Sulawesi Selatan, Lampung, dan Sumatera Barat dalam program pemberdayaan petani kakao.',
+
+    aud_tag:'Klien & Mitra', aud_title:'Siapa yang Tepat Bekerja Sama?',
+    aud_desc:'Saya melayani organisasi yang membutuhkan advisory teknis berbasis data dengan rekam jejak yang terverifikasi.',
+    a1_h:'Lembaga Donor & Multilateral',
+    a1_p:'ADB, World Bank, FCDO, GIZ, dan lembaga donor yang membutuhkan konsultan EE/RE dengan pengalaman lapangan yang terverifikasi.',
+    a2_h:'Kementerian & Badan Pemerintah',
+    a2_p:'ESDM, KLHK, BAPPENAS, dan instansi pemerintah yang memerlukan advisory kebijakan dan implementasi teknis EE/RE.',
+    a3_h:'Perusahaan & Industri',
+    a3_p:'Industri manufaktur, properti, dan sektor lain yang menargetkan efisiensi energi, dekarbonisasi, atau sertifikasi ISO 50001.',
+    a4_h:'NGO & Program Pemberdayaan',
+    a4_p:'Organisasi masyarakat sipil yang memerlukan keahlian teknis EE/RE dan kapasitas metodologi RBM/MEAL.',
+    a5_h:'Pengembang Proyek EE & RE',
+    a5_p:'Developer proyek energi terbarukan atau efisiensi energi yang membutuhkan analisis investasi, LCCA, dan linkage ESCO.',
+    a6_h:'Institusi Akademik & Riset',
+    a6_p:'Universitas dan lembaga riset yang memerlukan kolaborasi policy brief atau penelitian terapan di bidang energi dan iklim.',
+
+    pub_tag:'Publikasi', pub_title:'Publikasi & Kontribusi',
+    pub_desc:'Kontribusi teknis yang dipublikasikan dan digunakan oleh lembaga pemerintah serta institusi internasional.',
+    pub1_t:'ISO 50005 Energy Management Building Book',
+    pub1_d:'Panduan implementasi sistem manajemen energi untuk Kementerian ESDM/EBTKE — diterbitkan dan diadopsi secara resmi.',
+    pub2_t:'POME — Online Energy Management Reporting System',
+    pub2_d:'Sistem pelaporan manajemen energi secara daring yang dikembangkan untuk skala operasional nasional.',
+    pub3_t:'Policy Brief & Laporan Riset EE/Dekarbonisasi',
+    pub3_d:'Policy brief dan laporan riset terapan di bidang efisiensi energi dan dekarbonisasi untuk donor dan pemerintah.',
+
+    cert_tag:'Keahlian Teknis', cert_title:'Sertifikasi & Metodologi',
+    cert_desc:'Sertifikasi internasional dan metodologi terstandarisasi yang menjadi landasan setiap penugasan konsultasi.',
+    cert_h1:'Sertifikasi', cert_h2:'Metodologi',
+    cert_mgr:'Manager Energy Industry Course', cert_vc:'Value Chain Mapping', cert_sh:'Stakeholder Mapping',
+
+    why_tag:'Profile', why_title:'Tentang Wisnu Boediono',
+    why_desc:'Energy & Climate Consultant dengan rekam jejak lintas sektor yang terverifikasi.',
+    profile_intro:'11 tahun pengalaman lintas pemerintah–donor–akar rumput; lulusan universitas Australia (Murdoch, RMIT); pengalaman dari level menteri hingga 21.500 petani; bilingual EN/ID.',
+    w1_h:'Pengalaman Lintas Sektor',
+    w1_p:'11 tahun bergerak di lintas sektor: pemerintah (ESDM, KLHK), donor internasional (ADB, World Bank, FCDO), dan program akar rumput hingga 21.500 petani.',
+    w2_h:'Latar Belakang Akademis Internasional',
+    w2_p:'Lulusan Murdoch University & RMIT University, Australia — dengan fokus pada environmental management dan kebijakan energi.',
+    w3_h:'Jaringan Institusional yang Luas',
+    w3_p:'Hubungan kerja aktif dengan ADB, World Bank, FCDO, Kementerian ESDM/EBTKE, KLHK, Save the Children, WCS, dan MDF.',
+    w4_h:'Rekam Jejak Terukur',
+    w4_p:'USD 1,1 juta pendanaan green economy diamankan; 21.500 petani dijangkau; ISO 50005 Building Book & POME diterbitkan untuk Kementerian ESDM.',
+
+    cta_tag:'Kontak', cta_title:'Mulai Diskusi Konsultasi',
+    cta_desc:'Hubungi saya untuk mendiskusikan kebutuhan advisory, program efisiensi energi, atau peluang kolaborasi proyek.',
+    cta_wa:'Chat WhatsApp', cta_email:'Kirim Email',
+
+    ft_tag:'Energy & Climate Consultant — Investment Advisory, Decarbonisation, ISO 50001/50005, Policy Advisory.',
+    ft_nav:'Navigasi', ft_svc:'Layanan', ft_con:'Kontak', ft_pub:'Publikasi', ft_cert:'Sertifikasi',
+    ft_copy:'© 2025 Wishnu Hijau. Hak cipta dilindungi.',
+    ft_made:'Energy & Climate Consulting — Bali, Indonesia 🌿',
+    stb_lbl:'Kembali ke atas',
+  },
+  en: {
+    nav_home:'Home', nav_svc:'Services', nav_imp:'Impact', nav_proj:'Projects', nav_why:'Profile', nav_con:'Contact',
+    hero_hi:'🌿 Hello, I\'m',
+    hero_role:'Energy & Climate Consultant',
+    hero_intro:'Investment consultant for energy efficiency & renewable energy: Life Cycle Cost Analysis (LCCA), NPV, IRR, preparation & linkage with ESCO.',
+    hero_btn:'Discuss Your Advisory Needs',
+    hs1:'Years of Experience', hs2:'Green Economy Funding', hs3:'Farmers Reached', hs4:'National Programme Led',
+    badge1_s:'ISO 50001', badge1_p:'Certified HAKE 2023',
+    badge2_s:'11+ Years', badge2_p:'Energy & Climate',
+
+    svc_tag:'Services', svc_title:'Services & Expertise',
+    svc_desc:'Technical advisory grounded in standardised methodology and a verifiable track record at national and international level.',
+    s1_t:'EE & RE Investment Advisory',
+    s1_d:'LCCA, NPV, IRR, financial modelling, and ESCO linkage for energy efficiency and renewable energy projects.',
+    s2_t:'Decarbonisation & EE Programme Management',
+    s2_d:'Programme and project management for energy efficiency & decarbonisation from SME to national scale.',
+    s3_t:'ISO 50001 / 50005 Energy Management System',
+    s3_d:'Implementation & advisory support for energy management systems to ISO 50001 and ISO 50005 standards.',
+    s4_t:'Climate & Energy Policy Advisory',
+    s4_d:'Climate & energy policy advisory including government liaison with ESDM/EBTKE and KLHK.',
+    s5_t:'Capacity Building & Training',
+    s5_d:'PMD Pro, RBM, Theory of Change, MEAL — training based on internationally standardised methodology.',
+    s6_t:'Research, Policy Brief & Stakeholder Facilitation',
+    s6_d:'Applied research, policy brief writing, and multi-stakeholder facilitation across sectors.',
+
+    imp_tag:'Track Record', imp_title:'Measurable & Verifiable Track Record',
+    imp_desc:'Experience across government, international donors, and grassroots programmes — with results that can be measured and verified.',
+    st1:'Years of Experience', st2:'Green Economy Funding Secured', st3:'Small Farmers Reached', st4:'National Programme Led',
+
+    pt_lbl:'Trusted & Working With',
+
+    proj_tag:'Track Record', proj_title:'Programme & Projects',
+    proj_desc:'Real projects with international institutions, government ministries, and civil society organisations — all verifiable.',
+    p1_t:'UK-PACT Indonesia (FCDO)',
+    p1_d:'National coordinator for the decarbonisation & energy efficiency programme targeting small and medium enterprises (SMEs) in Indonesia.',
+    p2_t:'ISO 50005 Energy Management Building Book',
+    p2_d:'Developed for the Ministry of ESDM/EBTKE as a national-level energy management system implementation guide.',
+    p3_t:'POME — Online Energy Management Reporting System',
+    p3_d:'Development of a national-scale online energy management reporting system.',
+    p4_t:'Decarbonisation & Capacity Building Bali (MDF)',
+    p4_d:'Decarbonisation and capacity building programme for the business sector in Bali, supported by MDF — ongoing.',
+    p5_t:'Cocoa Life (Save the Children)',
+    p5_d:'Outreach to 21,500 small-scale farmers in South Sulawesi, Lampung, and West Sumatra through the Cocoa Life farmer empowerment programme.',
+
+    aud_tag:'Clients & Partners', aud_title:'Who Should Work With Me?',
+    aud_desc:'I serve organisations that require data-driven technical advisory with a verifiable track record.',
+    a1_h:'Donor & Multilateral Agencies',
+    a1_p:'ADB, World Bank, FCDO, GIZ, and donor agencies requiring EE/RE consultants with a verified field track record.',
+    a2_h:'Government Ministries & Agencies',
+    a2_p:'ESDM, KLHK, BAPPENAS, and government bodies requiring policy advisory and technical EE/RE implementation support.',
+    a3_h:'Companies & Industry',
+    a3_p:'Manufacturing, property, and other sectors targeting energy efficiency, decarbonisation, or ISO 50001 certification.',
+    a4_h:'NGOs & Development Programmes',
+    a4_p:'Civil society organisations requiring technical EE/RE expertise and RBM/MEAL methodology capacity.',
+    a5_h:'EE & RE Project Developers',
+    a5_p:'Renewable energy or energy efficiency project developers requiring investment analysis, LCCA, and ESCO linkage.',
+    a6_h:'Academic & Research Institutions',
+    a6_p:'Universities and research bodies seeking collaboration on policy briefs or applied research in energy and climate.',
+
+    pub_tag:'Publications', pub_title:'Publications & Contributions',
+    pub_desc:'Technical contributions published and used by government institutions and international organisations.',
+    pub1_t:'ISO 50005 Energy Management Building Book',
+    pub1_d:'Energy management system implementation guide for the Ministry of ESDM/EBTKE — officially published and adopted.',
+    pub2_t:'POME — Online Energy Management Reporting System',
+    pub2_d:'Online energy management reporting system developed for national operational scale.',
+    pub3_t:'Policy Briefs & EE/Decarbonisation Research Reports',
+    pub3_d:'Applied policy briefs and research reports on energy efficiency and decarbonisation for donors and government.',
+
+    cert_tag:'Technical Expertise', cert_title:'Certifications & Methodology',
+    cert_desc:'International certifications and standardised methodologies underpinning every consultancy engagement.',
+    cert_h1:'Certifications', cert_h2:'Methodology',
+    cert_mgr:'Manager Energy Industry Course', cert_vc:'Value Chain Mapping', cert_sh:'Stakeholder Mapping',
+
+    why_tag:'Profile', why_title:'About Wisnu Boediono',
+    why_desc:'Energy & Climate Consultant with a cross-sector, verifiable track record.',
+    profile_intro:'11 years of experience spanning government–donor–grassroots; graduate of Australian universities (Murdoch, RMIT); experience from ministerial level to 21,500 farmers; bilingual EN/ID.',
+    w1_h:'Cross-Sector Experience',
+    w1_p:'11 years across sectors: government (ESDM, KLHK), international donors (ADB, World Bank, FCDO), and grassroots programmes reaching 21,500 farmers.',
+    w2_h:'International Academic Background',
+    w2_p:'Graduate of Murdoch University & RMIT University, Australia — with a focus on environmental management and energy policy.',
+    w3_h:'Extensive Institutional Network',
+    w3_p:'Active working relationships with ADB, World Bank, FCDO, Ministry of ESDM/EBTKE, KLHK, Save the Children, WCS, and MDF.',
+    w4_h:'Measurable Track Record',
+    w4_p:'USD 1.1M in green economy funding secured; 21,500 farmers reached; ISO 50005 Building Book & POME published for the Ministry of ESDM.',
+
+    cta_tag:'Contact', cta_title:'Start a Consultation Discussion',
+    cta_desc:'Contact me to discuss your advisory needs, energy efficiency programme, or project collaboration opportunity.',
+    cta_wa:'Chat on WhatsApp', cta_email:'Send Email',
+
+    ft_tag:'Energy & Climate Consultant — Investment Advisory, Decarbonisation, ISO 50001/50005, Policy Advisory.',
+    ft_nav:'Navigation', ft_svc:'Services', ft_con:'Contact', ft_pub:'Publications', ft_cert:'Certifications',
+    ft_copy:'© 2025 Wishnu Hijau. All rights reserved.',
+    ft_made:'Energy & Climate Consulting — Bali, Indonesia 🌿',
+    stb_lbl:'Back to top',
+  }
+};
+
+/* ── Apply language to all tagged elements ── */
+function setLang(lang) {
+  const d = T[lang];
+  if (!d) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const v = d[el.dataset.i18n];
+    if (v !== undefined) el.textContent = v;
+  });
+  document.getElementById('stb').setAttribute('aria-label', d.stb_lbl);
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.ls-btn').forEach(b => b.classList.toggle('act', b.dataset.lang === lang));
+  localStorage.setItem('wh_lang', lang);
+}
+
+/* ── Language switcher click handlers ── */
+document.querySelectorAll('.ls-btn').forEach(btn => {
+  btn.addEventListener('click', () => setLang(btn.dataset.lang));
+});
+
+/* ── Init: restore saved language or default to Indonesian ── */
+setLang(localStorage.getItem('wh_lang') || 'id');
+
+/* ── Nav: solid background on scroll, active link highlight ── */
+const navEl = document.getElementById('nav');
+const stbEl = document.getElementById('stb');
+const hbgEl = document.getElementById('hbg');
+const nlEl  = document.getElementById('nl');
+const secs  = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  navEl.classList.toggle('sc', y > 50);
+  stbEl.classList.toggle('vis', y > 400);
+  let cur = '';
+  secs.forEach(s => { if (y >= s.offsetTop - 120) cur = s.id; });
+  navAs.forEach(a => { a.classList.toggle('act', a.getAttribute('href') === '#' + cur); });
+}, { passive: true });
+
+/* ── Hamburger menu toggle ── */
+hbgEl.addEventListener('click', () => {
+  const op = hbgEl.classList.toggle('op');
+  nlEl.classList.toggle('op', op);
+  hbgEl.setAttribute('aria-expanded', op);
+});
+nlEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hbgEl.classList.remove('op');
+  nlEl.classList.remove('op');
+}));
+
+/* ── Scroll to top ── */
+stbEl.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ── Scroll-reveal: stagger siblings within the same grid ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const sibs = [...e.target.parentElement.querySelectorAll('.rv')];
+    setTimeout(() => e.target.classList.add('on'), sibs.indexOf(e.target) * 75);
+    ro.unobserve(e.target);
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>
